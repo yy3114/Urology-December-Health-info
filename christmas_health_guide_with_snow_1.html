@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖誕暖冬健康指南</title>
+    <!-- 載入 Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Inter 字體 --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #0b1f30; /* 靜態深藍色背景 */
+            color: #d1d5db; /* 淺灰色文字 */
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 雪花容器 */
+        #snowflakes-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        /* 雪花樣式 */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* 內容區塊背景設定 (高不透明度的白色,與深色背景形成高對比) */
+        .content-bg {
+            background-color: rgba(255, 255, 255, 0.95); /* 高不透明度,確保文字清晰 */
+            color: #1f2937; /* 內容區文字改為深色 */
+        }
+        .content-bg h2, .content-bg h3 {
+            color: #1d4ed8;
+        }
+        /* 健康卡片效果 */
+        .health-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: rgba(255, 255, 255, 1); /* 卡片使用不透明的白色背景 */
+        }
+        .health-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 50, 100, 0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 雪花容器 -->
+    <div id="snowflakes-container"></div>
+
+    <header class="bg-blue-800 shadow-xl sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-extrabold text-white text-center">
+                聖誕暖冬健康指南
+            </h1>
+            <p class="mt-1 text-sm text-blue-200 text-center">全方位守護您的年末健康與溫暖</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+
+        <section class="mb-12 content-bg p-6 rounded-xl shadow-2xl">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">為何冬季需要特別關照泌尿系統?</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                12月天氣轉冷,人們常會減少飲水或因頻尿而憋尿,這些習慣都可能增加泌尿道感染或結石的風險。此外,年末節日聚餐多,高油、高鹽、高糖的飲食也對腎臟造成額外負擔。讓我們一起看看如何在寒冷月份中維持泌尿系統健康。
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+            <div class="health-card p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
+                <div class="text-3xl mb-3 text-blue-500">💧</div>
+                <h3 class="text-xl font-semibold mb-2 text-blue-800">充足水分 (暖水為佳)</h3>
+                <p class="text-gray-600 text-sm">
+                    即使在寒冷的天氣裡,也要確保足夠的水分攝取,有助於稀釋尿液並預防結石。建議多喝溫開水或花草茶。
+                </p>
+            </div>
+
+            <div class="health-card p-6 rounded-xl shadow-lg border-t-4 border-teal-500">
+                <div class="text-3xl mb-3 text-teal-500">🧣</div>
+                <h3 class="text-xl font-semibold mb-2 text-teal-800">下半身保暖</h3>
+                <p class="text-gray-600 text-sm">
+                    腹部和下肢受寒可能影響血液循環,增加夜尿和頻尿次數。請穿著保暖衣物,保護腰部和腳部。
+                </p>
+            </div>
+
+            <div class="health-card p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
+                <div class="text-3xl mb-3 text-yellow-500">🍎</div>
+                <h3 class="text-xl font-semibold mb-2 text-yellow-800">避免刺激性食物</h3>
+                <p class="text-gray-600 text-sm">
+                    適量飲用咖啡、茶和酒精,減少高鹽、高糖食物,以減輕腎臟代謝負擔。
+                </p>
+            </div>
+
+            <div class="health-card p-6 rounded-xl shadow-lg border-t-4 border-pink-500">
+                <div class="text-3xl mb-3 text-pink-500">🚽</div>
+                <h3 class="text-xl font-semibold mb-2 text-pink-800">不憋尿,勤排尿</h3>
+                <p class="text-gray-600 text-sm">
+                    憋尿會使細菌有更多時間在膀胱內繁殖,大大增加泌尿道感染 (UTI) 的風險。感覺有尿意時,應儘快排空。
+                </p>
+            </div>
+
+        </div>
+
+        <section class="mb-12">
+            <div class="content-bg p-6 rounded-xl shadow-2xl border-l-8 border-indigo-500">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-4 border-b border-indigo-300 pb-2">🦵 冬季抽筋預防:常見原因與對策</h2>
+
+                <p class="text-gray-700 mb-4">
+                    冬天比平時更容易發生抽筋,尤其是夜間,這主要是由以下三個因素引起的:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+
+                    <div class="p-3 bg-indigo-50 rounded-lg shadow-sm">
+                        <p class="font-semibold text-indigo-600">低溫導致血液循環不良</p>
+                        <p class="text-gray-600">血管收縮,血液流速變慢,導致肌肉缺氧及代謝廢物堆積。</p>
+                    </div>
+
+                    <div class="p-3 bg-indigo-50 rounded-lg shadow-sm">
+                        <p class="font-semibold text-indigo-600">夜間保暖不足</p>
+                        <p class="text-gray-600">腿部受涼,冷空氣刺激神經和肌肉,使其不自主收縮痙攣。</p>
+                    </div>
+
+                    <div class="p-3 bg-indigo-50 rounded-lg shadow-sm">
+                        <p class="font-semibold text-indigo-600">脫水與電解質失衡</p>
+                        <p class="text-gray-600">天冷飲水不足,造成體內鉀、鈣、鎂等礦物質失衡,影響肌肉功能。</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-lg font-bold text-indigo-700 mb-2">💡 實用對策</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>**加強保暖:** 睡前熱敷或泡腳,穿寬鬆襪子或蓋好被子,特別是小腿部位。</li>
+                        <li>**維持水份:** 即使不渴也要少量多次飲用溫水,避免電解質失衡。</li>
+                        <li>**睡前伸展:** 進行溫和的腿部拉伸運動,幫助肌肉放鬆,減輕夜間緊張。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-12">
+            <div class="content-bg p-6 rounded-xl shadow-2xl">
+                <h2 class="text-2xl font-bold text-gray-700 mb-4 border-b pb-2">泌尿道感染 (UTI) 預防與警訊</h2>
+
+                <div class="md:flex md:space-x-8 space-y-6 md:space-y-0">
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-semibold text-teal-600 mb-3">✅ 實用預防貼士</h3>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start text-gray-700">
+                                <span class="mr-2 text-teal-500 font-bold flex-shrink-0">✓</span>
+                                女性應由前向後擦拭,保持私密處清潔乾燥。
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="mr-2 text-teal-500 font-bold flex-shrink-0">✓</span>
+                                排便後及性行為前後應排尿與清潔。
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="mr-2 text-teal-500 font-bold flex-shrink-0">✓</span>
+                                適量補充蔓越莓製品(無糖或低糖)。
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="md:w-1/2 border-t md:border-t-0 md:border-l pt-6 md:pl-8 md:pt-0">
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">🚨 立即就醫警訊</h3>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start text-gray-700">
+                                <span class="mr-2 text-red-500 font-bold flex-shrink-0">❗️</span>
+                                排尿時有灼熱感或疼痛 (尿痛)。
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="mr-2 text-red-500 font-bold flex-shrink-0">❗️</span>
+                                尿液混濁、有異味或帶血。
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="mr-2 text-red-500 font-bold flex-shrink-0">❗️</span>
+                                突發性的高燒、寒顫或腰部疼痛。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-blue-800 mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <p>&copy; 2025 聖誕暖冬健康顧問。本文僅供參考,如有不適請諮詢專業醫護人員。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 雪花生成腳本
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            
+            // 隨機選擇雪花符號
+            const snowflakeChars = ['❄', '❅', '❆', '✻', '✼', '❉'];
+            snowflake.textContent = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+            
+            // 隨機水平位置
+            snowflake.style.left = Math.random() * 100 + '%';
+            
+            // 隨機大小
+            const size = Math.random() * 1 + 0.5; // 0.5em 到 1.5em
+            snowflake.style.fontSize = size + 'em';
+            
+            // 隨機動畫持續時間 (下落速度)
+            const duration = Math.random() * 10 + 10; // 10秒到20秒
+            snowflake.style.animationDuration = duration + 's';
+            
+            // 隨機延遲開始
+            const delay = Math.random() * 5;
+            snowflake.style.animationDelay = delay + 's';
+            
+            // 隨機透明度
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4; // 0.4 到 1.0
+            
+            return snowflake;
+        }
+
+        // 初始化雪花
+        function initSnowflakes() {
+            const container = document.getElementById('snowflakes-container');
+            const snowflakeCount = 50; // 雪花數量
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = createSnowflake();
+                container.appendChild(snowflake);
+            }
+        }
+
+        // 頁面載入後初始化雪花
+        window.addEventListener('load', initSnowflakes);
+    </script>
+
+</body>
+</html>
